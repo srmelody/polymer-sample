@@ -50,6 +50,7 @@ module.exports = function (grunt) {
       styles: {
         files: [
           '<%= yeoman.app %>/styles/{,*/}*.css',
+          '<%= yeoman.app %>/bower_components/{,*/}*.css',
           '<%= yeoman.app %>/elements/{,*/}*.css'
         ],
         tasks: ['copy:styles', 'autoprefixer:server']

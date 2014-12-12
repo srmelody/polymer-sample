@@ -2,10 +2,10 @@
 
 <polymer-element name="bacon-card" attributes="card">
   <template>
-      <div>Rank: {{card.rank}}
-      		  
-      </div>
-      <div>Suit:{{card.suit}}
+    <div>
+      <bacon-suit suit="{{card.suit}}"></bacon-suit>
+      <span>{{card.rank}}</span>
+    </div>
   </template>
    <script>
     (function () {
