@@ -1,0 +1,23 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="bacon-card" attributes="card">
+  <template>
+      <div>Rank: {{card.rank}}
+      		  
+      </div>
+      <div>Suit:{{card.suit}}
+  </template>
+   <script>
+    (function () {
+
+      Polymer({
+        ready: function() {
+          this.cards = [
+           
+          ];
+        }
+      });
+
+    })();
+  </script>
+ </polymer-element>

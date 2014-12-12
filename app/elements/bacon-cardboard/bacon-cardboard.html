@@ -1,0 +1,28 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="bacon-cardboard" attributes="">
+  <template>
+      <div>This is a cardboard
+      <template id="greeting" repeat="{{ card in cards }}">
+        <bacon-card card="{{card}}"></bacon-card>
+      </template>
+      </div>
+  </template>
+  <script>
+    (function () {
+
+      Polymer({
+        ready: function() {
+          this.cards = [
+            {rank: 'Ace', suit: 'Spade'},
+            {rank: 'King', suit: 'Diamonds'},
+            {rank: 'Queen', suit: 'Diamonds'}, 
+            {rank: 'Jack', suit: 'Diamonds'},
+            {rank: '10', suit: 'Clubs'}
+          ];
+        }
+      });
+
+    })();
+  </script>
+ </polymer-element>
