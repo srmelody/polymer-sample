@@ -2,11 +2,17 @@
 
 <polymer-element name="bacon-cardboard" attributes="">
   <template>
-      <div>This is a cardboard
-      <template id="greeting" repeat="{{ card in cards }}">
-        <bacon-card card="{{card}}"></bacon-card>
-      </template>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+
+    <div class="container">
+      <div class="row">
+        <template id="greeting" repeat="{{ card in cards }}">
+          <div class="col-xs-2">
+            <bacon-card suit="{{card.suit}}" rank="{{card.rank}}"></bacon-card>
+          </div>
+        </template>
       </div>
+    </div>
   </template>
   <script>
     (function () {
@@ -14,11 +20,14 @@
       Polymer({
         ready: function() {
           this.cards = [
-            {rank: 'Ace', suit: 'Spades'},
-            {rank: 'King', suit: 'Diamonds'},
-            {rank: 'Queen', suit: 'Diamonds'}, 
-            {rank: 'Jack', suit: 'Hearts'},
-            {rank: '10', suit: 'Clubs'}
+            {rank: '10', suit: 'Clubs'},
+            {rank: '9', suit: 'Hearts'},
+            {rank: '3', suit: 'Hearts'},
+            {rank: 'A', suit: 'Spades'},
+            {rank: 'K', suit: 'Diamonds'},
+            {rank: 'Q', suit: 'Diamonds'}, 
+          
+           
           ];
         }
       });
