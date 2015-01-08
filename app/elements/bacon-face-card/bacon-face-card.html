@@ -1,0 +1,27 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="bacon-face-card" attributes="rank">
+  <template>
+    <link rel="stylesheet" href="bacon-face-card.css">
+    <img width=50px height=100px src="{{image}}"/>
+  </template>
+  <script>
+    (function () {
+
+      Polymer({
+        images: {
+          "A": "https://upload.wikimedia.org/wikipedia/commons/1/11/Manfred_von_Richthofen.jpg",
+          "K": "https://upload.wikimedia.org/wikipedia/commons/3/35/Henry_II_of_England_cropped.jpg",
+          "Q": "https://upload.wikimedia.org/wikipedia/en/0/03/Queen_Queen.png",
+          "J": "https://www.evernote.com/shard/s13/sh/fb5ad64d-ac8d-416e-93a9-79786529c05f/f3f49887abdf90df0ce50cbb535c14ed/deep/0/th-(JPEG-Image,-480---320-pixels).png"
+        },
+        ready: function() {
+
+          this.image = this.images[this.rank];
+        }
+        // define element prototype here
+      });
+
+    })();
+  </script>
+</polymer-element>
