@@ -1,4 +1,5 @@
 :host {
+
 	display: inline-block;
 	min-width: 90px;
 
@@ -17,21 +18,36 @@
 		}
 		.header {
 			height: 20px;
+			
+			
+
 		}
 		.footer {
 			height: 20px;
 		}
 		.center {
 			height: 100px;
+			.col-xs-12 {
+				padding-left: 0px;
+				padding-right: 0px;
+			}
+			.col-xs-12, x:-moz-any-link, x:default {
+			padding-left: 0px;
+			padding-right: 0px;
+			}
 		}
+		
 	}
+
 	.col-xs-12 {
+		padding-left: 100x;
 		&.header {
 			padding-left: 0px;
 		}
 		&.footer {
 			padding-right: 20px;
 		}
+		
 	}
 	.upsidedowntext {
 		&.rank-text {

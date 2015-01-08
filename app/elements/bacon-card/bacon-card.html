@@ -1,7 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-shadow/paper-shadow.html">
 
-<polymer-element name="bacon-card" attributes="rank suit something">
+<polymer-element name="bacon-card" attributes="rank suit">
   <template>
     <link rel="stylesheet" href="bacon-card.css">
     <link rel="stylesheet" href="/styles/shared.css">
@@ -16,11 +16,13 @@
             </div>
           </div>
           <div class="row center">
-                <div class="col-xs-12">
+            <div class="col-xs-12">
+            
             <template if="{{faceCard}}">
+
               <bacon-face-card rank="{{rank}}"></bacon-face-card>
             </template>
-            
+            <div class="pips">
             <template if="{{ rank < 4}}">
                 <bacon-single-col-pips rank="{{rank}}" suit="{{suit}}"></bacon-single-col-pips>
             </template> 
@@ -44,6 +46,7 @@
                 </template>
               </template>
             </template>
+            </div>
             </div>
         </div>
          
