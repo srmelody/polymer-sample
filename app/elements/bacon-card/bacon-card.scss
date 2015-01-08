@@ -1,0 +1,40 @@
+:host {
+	display: inline-block;
+	min-width: 70px;
+
+	width: 20%;
+	.card {
+		min-height: 140px;
+	 	width: 50px;
+	  	margin: 2px;
+			.row {
+		
+				margin: 0px;
+
+		
+		}
+		.header {
+			height: 20px
+		}
+		.footer {
+			height: 20px
+		}
+		.center {
+
+			height: 100px
+		}
+	}
+	.col-xs-12 {
+		&.header {
+			padding-left: 0px;
+		}
+		&.footer {
+			padding-right: 20px;
+		}
+	}
+	.upsidedowntext {
+		&.rank-text {
+		margin-left: 10px;
+		}
+	}
+}

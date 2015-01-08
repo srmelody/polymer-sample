@@ -1,0 +1,27 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="bacon-two-pips-row" attributes="suit">
+  <template>
+    <link rel="stylesheet" href="bacon-two-pips-row.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+
+     <div class="row">
+          <div class="col-xs-5 col-xs-offset-1">
+           
+            <bacon-suit suit="{{suit}}"></bacon-suit>
+          </div> 
+           <div class="col-xs-6">
+            <bacon-suit suit="{{suit}}"></bacon-suit>
+          </div>   
+        </div>
+  </template>
+  <script>
+    (function () {
+
+      Polymer({
+        // define element prototype here
+      });
+
+    })();
+  </script>
+</polymer-element>

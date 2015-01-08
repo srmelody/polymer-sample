@@ -1,0 +1,59 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="bacon-odd-col-pips" attributes="rank suit">
+  <template>
+    <link rel="stylesheet" href="bacon-odd-col-pips.css">
+
+    <template repeat="{{r in ranks }}">
+    <!-- <span>{{rank / r}}</span> -->
+           <!-- this is a horrible hack, sorry -->
+      <template if="{{ (rank / r  >= 3 ) || (rank / r  <= 2)  }}">
+        <template if="{{r % 2 == 0}}">
+        <span>{{r}}</span>
+          <bacon-two-pips-row suit="{{suit}}"></bacon-two-pips-row>
+       </template>
+      </template>
+      <template if="{{ (rank / r  < 3 )&& (rank / r  > 2 )  }}">
+
+       <bacon-one-pip-row suit="{{suit}}"/>
+      </template>
+    </template>
+  </template>
+  <script>
+    (function () {
+
+      Polymer({
+        computeRanks: function() {
+          var numVal = parseInt(this.rank);
+          if (isNaN(numVal)) {
+             return [1];  
+
+            
+          }
+          else {
+            var ranks = [];
+            for ( n = 0; n < numVal; n++ ) {
+              ranks[n] = n;
+            }
+            return ranks;
+          }
+         
+        },
+        ready: function() {
+          this.repeat = 10;
+          this.cards = [
+           
+          ];
+          this.faceCard = isNaN(parseInt(this.rank));
+
+          this.ranks = this.computeRanks();
+          this.even = this.ranks.length %2 == 0;
+        }
+
+
+
+      });
+
+    })();
+  </script>
+</polymer-element>

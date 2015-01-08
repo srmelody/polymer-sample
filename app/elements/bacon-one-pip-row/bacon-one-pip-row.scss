@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  .col-xs-5 {
+  	  &.col-xs-offset-4 {
+		  &.one-pip-cell {
+		  	padding-left:12px;
+		  }
+		}
+	}
+}
