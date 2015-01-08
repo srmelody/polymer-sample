@@ -3,11 +3,13 @@
 <polymer-element name="bacon-card-nine" attributes="suit">
   <template>
     <link rel="stylesheet" href="bacon-card-nine.css">
-    <bacon-two-pips-row suit="{{suit}}"></bacon-two-pips-row>
-    <bacon-two-pips-row suit="{{suit}}"></bacon-two-pips-row>
-    <bacon-one-pip-row suit="{{suit}}"></bacon-one-pip-row>
-    <bacon-two-pips-row suit="{{suit}}"></bacon-two-pips-row>
-    <bacon-two-pips-row suit="{{suit}}"></bacon-two-pips-row>
+      <div class="col-xs-12">
+        <bacon-two-pips-row suit="{{suit}}"></bacon-two-pips-row>
+        <bacon-two-pips-row suit="{{suit}}"></bacon-two-pips-row>
+        <bacon-one-pip-row suit="{{suit}}"></bacon-one-pip-row>
+        <bacon-two-pips-row suit="{{suit}}"></bacon-two-pips-row>
+        <bacon-two-pips-row suit="{{suit}}"></bacon-two-pips-row>
+        </div>
   </template>
   <script>
     (function () {

@@ -1,27 +1,28 @@
 :host {
 	display: inline-block;
-	min-width: 70px;
+	min-width: 90px;
 
 	width: 20%;
 	.card {
 		min-height: 140px;
-	 	width: 50px;
+	 	width: 90px;
+	  	
 	  	margin: 2px;
-			.row {
+		
+		.row {
 		
 				margin: 0px;
 
 		
 		}
 		.header {
-			height: 20px
+			height: 20px;
 		}
 		.footer {
-			height: 20px
+			height: 20px;
 		}
 		.center {
-
-			height: 100px
+			height: 100px;
 		}
 	}
 	.col-xs-12 {
