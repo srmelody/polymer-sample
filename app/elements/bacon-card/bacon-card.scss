@@ -2,8 +2,8 @@
 
 	display: inline-block;
 	min-width: 90px;
-
-	width: 20%;
+	width: 30%;
+	
 	.card {
 		min-height: 140px;
 	 	width: 90px;
@@ -54,4 +54,10 @@
 		margin-left: 10px;
 		}
 	}
+	
+.upsidedowntext{position:absolute;
+-moz-transform: rotate(-180deg); -o-transform: rotate(-180deg); -webkit-transform: rotate(-180deg); transform: rotate(-180deg);
+filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=2); ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"}
+	
+
 }

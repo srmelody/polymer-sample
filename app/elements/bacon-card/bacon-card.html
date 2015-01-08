@@ -88,8 +88,9 @@
           this.cards = [
            
           ];
-          this.faceCard = isNaN(parseInt(this.rank));
-
+          if(this.rank != undefined ) {
+            this.faceCard = isNaN(parseInt(this.rank));
+          }
           this.ranks = this.computeRanks();
           this.even = this.ranks.length %2 == 0;
         }
