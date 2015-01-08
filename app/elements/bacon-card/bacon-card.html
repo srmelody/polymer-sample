@@ -4,6 +4,8 @@
 <polymer-element name="bacon-card" attributes="rank suit something">
   <template>
     <link rel="stylesheet" href="bacon-card.css">
+    <link rel="stylesheet" href="/styles/shared.css">
+
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
     <paper-shadow>
         <div class="card">
@@ -13,44 +15,45 @@
               <span>{{rank}}</span>
             </div>
           </div>
-   
-      
-
-            <template repeat="{{rank in ranks }}">
+          <div class="row">
+            <template if="{{faceCard}}">
+              <div>I am a face card</div>
+            </template>
+            
+            <template if="{{ rank < 4}}">
+                <bacon-single-col-pips rank="{{rank}}" suit="{{suit}}"></bacon-single-col-pips>
+            </template> 
+            
+            <template if="{{ rank >= 4}}">
 
               <template if="{{even}}">
-                <template if="{{rank % 2 == 0}}">
-                  <div class="row">
-                    <div class="col-xs-1 col-xs-offset-1">
-                      <bacon-suit suit="{{suit}}"></bacon-suit>
-                    </div> 
-                     <div class="col-xs-1">
-                      <bacon-suit suit="{{suit}}"></bacon-suit>
-                    </div>   
-                  </div>
+       
+                <bacon-double-col-pips rank="{{rank}}" suit="{{suit}}"></bacon-double-col-pips>
+              </template>  
+            
+              <template if="{{!even}}">
+                <template if="{{ rank == 5}}">
+                  <bacon-card-five suit="{{suit}}"></bacon-card-five>
                 </template>
-
-              </template>
-                <template if="{{!even}}">
-                 <template if="{{rank % 2 == 0}}">
-                  <div class="row">
-                    <div class="col-xs-1 col-xs-offset-1">
-                      <bacon-suit suit="{{suit}}"></bacon-suit>
-                    </div> 
-                     <div class="col-xs-1">
-                      <bacon-suit suit="{{suit}}"></bacon-suit>
-                    </div>   
-                  </div>
+                <template if="{{ rank == 7}}">
+                  <bacon-card-seven suit="{{suit}}"></bacon-card-seven>
                 </template>
-
+                <template if="{{ rank == 9}}">
+                  <bacon-card-nine suit="{{suit}}"></bacon-card-nine>
+                </template>
               </template>
             </template>
-   
+            </div>
+        
          
           <div class="row">
-            <div class="col-xs-12 col-xs-offset-4">
-              <span>{{rank}}</span>
-              <bacon-suit suit="{{suit}}"></bacon-suit>
+            <div class="col-xs-12 col-xs-offset-6 footer">
+             
+              <span class="upsidedowntext">
+                <bacon-suit suit="{{suit}}"></bacon-suit>
+              </span> 
+              <span class="upsidedowntext rank-text">{{rank}}</span>
+      
             </div>
           </div> 
         </div>
@@ -81,6 +84,8 @@
           this.cards = [
            
           ];
+          this.faceCard = isNaN(parseInt(this.rank));
+
           this.ranks = this.computeRanks();
           this.even = this.ranks.length %2 == 0;
         }
