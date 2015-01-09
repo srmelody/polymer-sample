@@ -8,7 +8,7 @@
       <div class="row">
         <template id="greeting" repeat="{{ card in cards }}">
           <div class="col-xs-4">
-            <bacon-card suit="{{card.suit}}" rank="{{card.rank}}"></bacon-card>
+            <bacon-card suit="{{card.suit}}" rank="{{card.rank}}" faceCard="{{card.face}}"></bacon-card>
           </div>
         </template>
       </div>
@@ -32,10 +32,10 @@
             {rank: '4', suit: 'Hearts'},
 
             {rank: '3', suit: 'Hearts'},
-            {rank: 'A', suit: 'Spades'},
-            {rank: 'K', suit: 'Diamonds'},
-            {rank: 'Q', suit: 'Diamonds'}, 
-             {rank: 'J', suit: 'Clubs'}
+            {rank: 'A', suit: 'Spades', face: true},
+            {rank: 'K', suit: 'Diamonds', face: true},
+            {rank: 'Q', suit: 'Diamonds', face: true}, 
+             {rank: 'J', suit: 'Clubs', face: true}
           
            
           ];

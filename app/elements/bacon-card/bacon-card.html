@@ -1,7 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-shadow/paper-shadow.html">
 
-<polymer-element name="bacon-card" attributes="rank suit">
+<polymer-element name="bacon-card" attributes="rank suit faceCard">
   <template>
     <link rel="stylesheet" href="bacon-card.css">
     <link rel="stylesheet" href="/styles/shared.css">
@@ -15,6 +15,7 @@
               <span>{{rank}}</span>
             </div>
           </div>
+          
           <div class="row center">
             <div class="col-xs-12">
             
@@ -29,12 +30,12 @@
             
             <template if="{{ rank >= 4}}">
 
-              <template if="{{even}}">
+              <template if="{{ rank % 2 == 0}}">
        
                 <bacon-double-col-pips rank="{{rank}}" suit="{{suit}}"></bacon-double-col-pips>
               </template>  
             
-              <template if="{{!even}}">
+              <template if="{{ rank % 2 != 0}}">
                 <template if="{{ rank == 5}}">
                   <bacon-card-five suit="{{suit}}"></bacon-card-five>
                 </template>
@@ -83,16 +84,27 @@
           }
          
         },
+        computeFaceCard: function() {
+          if(this.rank != undefined ) {
+            this.faceCard = isNaN(parseInt(this.rank));
+          }
+          else {
+            faceCard = false;
+          }
+        },
         ready: function() {
           this.repeat = 10;
           this.cards = [
            
           ];
-          if(this.rank != undefined ) {
-            this.faceCard = isNaN(parseInt(this.rank));
-          }
+          //this.computeFaceCard();
           this.ranks = this.computeRanks();
           this.even = this.ranks.length %2 == 0;
+          // Object.observe(this.rank, function(changes) {
+          //   this.computeFaceCard();
+          // });
+
+          
         }
       });
 
