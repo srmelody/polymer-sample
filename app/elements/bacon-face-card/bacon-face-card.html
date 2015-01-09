@@ -15,6 +15,10 @@
           "Q": "https://upload.wikimedia.org/wikipedia/en/0/03/Queen_Queen.png",
           "J": "https://www.evernote.com/shard/s13/sh/fb5ad64d-ac8d-416e-93a9-79786529c05f/f3f49887abdf90df0ce50cbb535c14ed/deep/0/th-(JPEG-Image,-480---320-pixels).png"
         },
+        rankChanged: function() {
+          this.image = this.images[this.rank];
+
+        },
         ready: function() {
 
           this.image = this.images[this.rank];

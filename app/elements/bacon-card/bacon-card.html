@@ -1,7 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-shadow/paper-shadow.html">
 
-<polymer-element name="bacon-card" attributes="rank suit faceCard">
+<polymer-element name="bacon-card" attributes="rank suit">
   <template>
     <link rel="stylesheet" href="bacon-card.css">
     <link rel="stylesheet" href="/styles/shared.css">
@@ -85,24 +85,25 @@
          
         },
         computeFaceCard: function() {
+          var faceCard = false;
           if(this.rank != undefined ) {
-            this.faceCard = isNaN(parseInt(this.rank));
+            faceCard = isNaN(parseInt(this.rank));
           }
-          else {
-            faceCard = false;
-          }
+          console.log("Compuete face card called for rank:", this, faceCard);
+
+         
+          return faceCard;
         },
-        ready: function() {
-          this.repeat = 10;
-          this.cards = [
-           
-          ];
-          //this.computeFaceCard();
+        rankChanged: function(oldValue, newValue ) {
+          this.ranks = this.computeRanks();
+          this.even = this.ranks.length %2 == 0;  
+          this.faceCard = this.computeFaceCard();
+        },
+        ready: function() {         
+          this.faceCard = this.computeFaceCard();
           this.ranks = this.computeRanks();
           this.even = this.ranks.length %2 == 0;
-          // Object.observe(this.rank, function(changes) {
-          //   this.computeFaceCard();
-          // });
+         
 
           
         }
